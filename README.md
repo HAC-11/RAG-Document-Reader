@@ -19,7 +19,7 @@ All using open-source tools.
 ### Clone repo
 
 ```
-git clone https://github.com/mrdbourke/simple-local-rag.git
+git clone https://github.com/HAC-11/RAG-Document-Reader.git
 ```
 
 ```
