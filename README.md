@@ -51,7 +51,6 @@ cd rag-doc-qna
 
 ### Clone repo
 
-```
 git clone https://github.com/HAC-11/RAG-Document-Reader.git
 ```
 
@@ -83,7 +82,7 @@ Windows:
 ```
 pip install -r requirements.txt
 ```
-```
+
 What is RAG?
 
 RAG stands for Retrieval Augmented Generation.
