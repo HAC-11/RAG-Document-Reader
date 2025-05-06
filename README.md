@@ -1,12 +1,45 @@
-# Simple Local RAG Tutorial
+# 🧠 RAG-Based Document Question Answering System
 
-Local RAG pipeline we're going to build:
-This is a simple local retrieval-augmented generation (RAG) workflow for document processing and embedding creation, followed by search and answer functionality. The process begins with a collection of documents, such as PDFs or a CSV file, which are preprocessed into smaller chunks, for example, groups of 10 sentences each. These chunks are used as context for the Large Language Model (LLM). A cool person (potentially the user) asks a query such as "What are the macronutrients? And what do they do?" This query is then transformed by an embedding model into a numerical representation using sentence transformers or other options from Hugging Face, which are stored in a torch.tensor format for efficiency, especially with large numbers of embeddings (around 100k+). For extremely large datasets, a vector database/index may be used. The numerical query and relevant document passages are processed on a local GPU, specifically an RTX 4090. The LLM generates output based on the context related to the query, which can be interacted with through an optional chat web app interface. All of this processing happens on a local GPU. The flowchart includes icons for documents, processing steps, and hardware, with arrows indicating the flow from document collection to user interaction with the generated text and resources.
+This project implements a **Retrieval-Augmented Generation (RAG)** system that allows users to upload **PDF or CSV documents**, ask questions in **natural language (English or Gujarati)**, and receive accurate, context-aware answers based solely on the uploaded content.
 
+Built with **Python**, **Streamlit**, **Hugging Face embeddings**, and **ChromaDB**, this project integrates **Large Language Models (LLMs)** via **Groq (LLaMA 3)** and **Gemini (Google)** to deliver multilingual, offline-capable document Q&A.
 
-All the way from PDF ingestion to "chat with PDF" style features.
+---
 
-All using open-source tools.
+## 🔧 Features
+
+- 📄 Upload and parse PDF/CSV documents
+- 🧩 Chunk documents and generate embeddings
+- 💾 Store vectors in ChromaDB
+- 🔍 Perform cosine similarity search over document chunks
+- 🧠 Generate answers via LLM (Groq/Gemini)
+- 🌐 Support for multilingual input (English & Gujarati)
+- 🖥️ Simple and responsive Streamlit interface
+- 🔌 Offline-capable processing pipeline
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: Streamlit  
+- **Embedding Model**: Hugging Face (`paraphrase-multilingual-MiniLM-L12-v2`)  
+- **Vector Store**: ChromaDB  
+- **LLMs Used**:  
+  - Groq (LLaMA 3) – fast, efficient generation  
+  - Gemini (Google) – multilingual, fluent responses  
+- **PDF Parsing**: pdfplumber / PyPDF2  
+- **CSV Handling**: pandas  
+- **Other Libraries**: shutil, os, json, requests
+
+---
+
+## 📦 Installation
+
+1. **Clone the repo**  
+```bash
+git clone https://github.com/HAC-11/rag-doc-qna.git
+cd rag-doc-qna
+
 
 
 ## Prerequisites
